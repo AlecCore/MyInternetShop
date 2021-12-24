@@ -19,6 +19,10 @@ namespace MyInternetShop.Data
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<Client> Clients { get; set; }
+
+        public DbSet<Order> Orders { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer(_config.GetConnectionString("InternetShop"));
@@ -33,7 +37,25 @@ namespace MyInternetShop.Data
                   Price=(Double)100,
                   Name="Galaxy S10"                
               });
+            bldr.Entity<Client>()
+              .HasData(new
+              {
+                  ClientId = 1,
+                  FullName="Kopcha Oleksii",
+              });
+            bldr.Entity<Order>()
+              .HasData(new
+              {
+                  OrderId = 1,
+                  DeliveryTime = DateTime.Now,
+                  ClientId=1,
+                  ProductId=1
+              });
         }
 
      }
+
+   
+
 }
+

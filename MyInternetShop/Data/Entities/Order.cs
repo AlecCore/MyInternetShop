@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace MyInternetShop.Data.Entities
 {
-    
-    public class Product
+    public class Order
     {
-
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductId { get; set; }
+        public int OrderId { get; set; }
 
-        public Double Price { get; set; }
+        public DateTime DeliveryTime { get; set; }
 
-        public string Name { get; set; }
+        public Client Client { get; set; }
+
+        public Product Product { get; set; }
 
     }
 }

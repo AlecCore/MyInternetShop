@@ -17,5 +17,9 @@ namespace MyInternetShop.Data
 
         Task<Product> GetProductByIdAsync(int Id);
 
+        Task<Client> GetClientByIdAsync(int Id);
+        Task<Order[]> GetAllOrdersAsync(bool includeClients = false, bool includeProducts = false);
+        Task<Order> GetOrderByIdAsync(int Id, bool includeClients = false, bool includeProducts = false);
+
     }
 }

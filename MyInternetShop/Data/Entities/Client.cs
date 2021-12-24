@@ -6,18 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace MyInternetShop.Data.Entities
 {
-    
-    public class Product
+    public class Client
     {
-
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
-        public int ProductId { get; set; }
+        public int ClientId { get; set; }
 
-        public Double Price { get; set; }
+        public string FullName { get; set; }
 
-        public string Name { get; set; }
+
 
     }
 }
