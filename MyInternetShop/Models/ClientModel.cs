@@ -7,13 +7,12 @@ using MyInternetShop.Data.Entities;
 
 namespace MyInternetShop.Models
 {
-    public class ProductModel
+    public class ClientModel
     {
-        public int ProductId { get; set; }
+        public int ClientId { get; set; }
 
-        public Double Price { get; set; }
+        public string FullName { get; set; }
 
-        public string Name { get; set; }
 
     }
 }

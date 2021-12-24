@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
+using MyInternetShop.Data.EntityFactories;
 
 namespace MyInternetShop
 {
@@ -21,9 +22,13 @@ namespace MyInternetShop
         {
             services.AddDbContext<InternetShopContext>();
             services.AddScoped<IInternetShopRepository, InternetShopRepository>();
+            services.AddScoped<IClientFactory, ClientFactory>();
+            services.AddScoped<IOrderFactory, OrderFactory>();
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
             services.AddMvc()
-                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+                 .SetCompatibilityVersion(CompatibilityVersion.Version_3_0)
+                 .AddNewtonsoftJson();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
